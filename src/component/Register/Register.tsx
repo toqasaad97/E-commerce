@@ -25,8 +25,6 @@ const Register: React.FC = () => {
         setIsError(error);
       });
     console.log(values);
-
-
   };
 
   const regForm = useFormik({
@@ -67,17 +65,20 @@ const Register: React.FC = () => {
   });
 
   return (
-    <div className="container lg:flex flex-col justify-center items-center mt-[40px]">
+    <div className="container lg:flex flex-col justify-center items-center mt-[40px] dark:bg-gray-900">
       <div className="lg:w-[75%] flex flex-col">
-      {isError ?
-              <div
-                className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
-                role="alert"
-              >
-error
-              </div> : ''
-            }
-        <h1 id="register-form-title" className="text-2xl font-bold mb-6">
+        {isError && (
+          <div
+            className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            role="alert"
+          >
+            {isError}
+          </div>
+        )}
+        <h1
+          id="register-form-title"
+          className="text-2xl font-bold mb-6 dark:text-white"
+        >
           Register
         </h1>
         <form onSubmit={regForm.handleSubmit}>
@@ -93,7 +94,7 @@ error
               type="text"
               name="name"
               id="name"
-              className="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border rounded-md border-gray-300 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-4 focus:ring-light-blue-500"
+              className="block py-2.5 px-3 w-full text-sm text-gray-900 dark:bg-gray-800 bg-transparent border rounded-md border-gray-300 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-4 focus:ring-light-blue-500 dark:focus:ring-gray-500"
               onChange={regForm.handleChange}
               onBlur={regForm.handleBlur}
             />
@@ -119,7 +120,7 @@ error
               type="email"
               name="email"
               id="email"
-              className="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border rounded-md border-gray-300 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-4 focus:ring-light-blue-500"
+              className="block py-2.5 px-3 w-full text-sm text-gray-900 dark:bg-gray-800 bg-transparent border rounded-md border-gray-300 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-4 focus:ring-light-blue-500 dark:focus:ring-gray-500"
               onChange={regForm.handleChange}
               onBlur={regForm.handleBlur}
             />
@@ -145,7 +146,7 @@ error
               type="password"
               name="password"
               id="password"
-              className="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border rounded-md border-gray-300 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-4 focus:ring-light-blue-500"
+              className="block py-2.5 px-3 w-full text-sm text-gray-900 dark:bg-gray-800 bg-transparent border rounded-md border-gray-300 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-4 focus:ring-light-blue-500 dark:focus:ring-gray-500"
               onChange={regForm.handleChange}
               onBlur={regForm.handleBlur}
             />
@@ -171,7 +172,7 @@ error
               type="password"
               name="repassword"
               id="repassword"
-              className="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border rounded-md border-gray-300 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-4 focus:ring-light-blue-500"
+              className="block py-2.5 px-3 w-full text-sm text-gray-900 dark:bg-gray-800 bg-transparent border rounded-md border-gray-300 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-4 focus:ring-light-blue-500 dark:focus:ring-gray-500"
               onChange={regForm.handleChange}
               onBlur={regForm.handleBlur}
             />
@@ -197,7 +198,7 @@ error
               type="tel"
               name="phone"
               id="phone"
-              className="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border rounded-md border-gray-300 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-4 focus:ring-light-blue-500"
+              className="block py-2.5 px-3 w-full text-sm text-gray-900 dark:bg-gray-800 bg-transparent border rounded-md border-gray-300 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-4 focus:ring-light-blue-500 dark:focus:ring-gray-500"
               onChange={regForm.handleChange}
               onBlur={regForm.handleBlur}
             />
@@ -214,7 +215,7 @@ error
           {/* Submit Button */}
           <button
             type="submit"
-            className="text-white bg-[#4FA74F] hover:bg-[#65b565] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 mt-4 ml-auto block"
+            className="text-white bg-[#4FA74F] hover:bg-[#65b565] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 mt-4 ml-auto block dark:bg-green-700 dark:hover:bg-green-600 dark:focus:ring-green-800"
           >
             Register Now
           </button>
@@ -224,4 +225,5 @@ error
   );
 };
 
-export default Register 
+export default Register;
+ 

@@ -24,7 +24,7 @@ const Register: React.FC = () => {
         console.log(error);
         setIsError(error);
       });
-    console.log(values);
+
   };
 
   const regForm = useFormik({
@@ -65,7 +65,8 @@ const Register: React.FC = () => {
   });
 
   return (
-    <div className="container lg:flex flex-col justify-center items-center mt-[40px] dark:bg-gray-900">
+    <div className=" dark:bg-gray-900">
+          <div className="container lg:flex flex-col justify-center items-center py-[40px] dark:bg-gray-900">
       <div className="lg:w-[75%] flex flex-col">
         {isError && (
           <div
@@ -222,8 +223,9 @@ const Register: React.FC = () => {
         </form>
       </div>
     </div>
+
+    </div>
   );
 };
 
 export default Register;
- 

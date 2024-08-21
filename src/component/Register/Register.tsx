@@ -67,10 +67,13 @@ const Register: React.FC = () => {
           }
         );
         const data = await res.json();
-        navigate("/login")
+
         setSubmit(false);
         setIsTrue(true);
         setIsError(null);
+        setTimeout(() => {
+          navigate("/Login")
+        }, 2000);
 
         if (!res.ok) {
           setIsTrue(false);

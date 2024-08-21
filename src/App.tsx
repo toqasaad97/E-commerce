@@ -7,6 +7,7 @@ import Register from './component/Register/Register'
  const router =createBrowserRouter([
 {path:'',element: <Layout/> , children:[
   {index:true,element: <Login/>},
+  {path:'/login',element: <Login/>},
   {path:'/register',element: <Register/>},
 
 ]}

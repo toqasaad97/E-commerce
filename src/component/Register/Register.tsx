@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { ColorRing } from "react-loader-spinner";
+import { useNavigate } from "react-router-dom";
 
 
 // User Interface
@@ -39,6 +40,8 @@ const Register: React.FC = () => {
   const [isError, setIsError] = useState<string | null>(null);
   const [isTrue, setIsTrue] = useState<boolean>(false);
   const [submit, setSubmit] = useState<boolean>(false);
+  const navigate =useNavigate ()
+
 
   // Formik setup
   const formik = useFormik({
@@ -64,8 +67,8 @@ const Register: React.FC = () => {
           }
         );
         const data = await res.json();
+        navigate("/login")
         setSubmit(false);
-        console.log(data);
         setIsTrue(true);
         setIsError(null);
 
